@@ -1,16 +1,42 @@
 <div class="card rounded-3">
     <div class="card-header text-center bg-dark bg-gradient fw-bold text-white">Add Course</div>
     <div class="card-body bg-dark-subtle fw-bold rounded-bottom-3">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Title:</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title" />
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Description:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Description...." rows="3"></textarea>
-        </div>
-        <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-info fw-bold bg-gradient w-25">Submit</button>
-        </div>        
+        <form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title:</label>
+                <input type="email" class="form-control" id="title" name="title" #title="ngModel" [(ngModel)]="model.title" placeholder="Enter Title" required   />
+                @if(title.invalid && title.touched){
+                    <div class="text-danger fw-medium">
+                        &ast;Title is required
+                    </div>
+                }
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description:</label>
+                <textarea class="form-control" id="description" name="description" #description="ngModel" [(ngModel)]="model.description" placeholder="Enter Description...." rows="3" required></textarea>
+                @if(description.invalid && description.touched){
+                    <div class="text-danger fw-medium">
+                        &ast;Description is required
+                    </div>
+                }
+            </div>
+            <div>
+                <label for="image">Upload image:</label>
+                <input type="file" name="image" id="image" accept="image/*" (change)="onFileSelected($event)" [multiple]="false" ngModel required>
+                @if(cover){
+                    <div class="imageDiv d-flex justify-content-center">
+                        <img [src]="cover" alt="image">
+                    </div>
+                }
+                @if(showError){
+                    <div class="text-danger fw-medium">
+                        &ast;Upload Image
+                    </div>
+                }
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-info fw-bold bg-gradient w-25">Submit</button>
+            </div>        
+        </form>
     </div>
 </div>
