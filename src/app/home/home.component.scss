@@ -1,0 +1,22 @@
+section{
+    height: 80vh;
+    width: 100%;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+    ),
+    url("../imgs/Banner-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.main-content{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h1{
+        color: white;
+        font-size: 3rem;
+    }
+}
