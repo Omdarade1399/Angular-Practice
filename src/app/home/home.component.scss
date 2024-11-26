@@ -1,18 +1,19 @@
-section{
-    height: 80vh;
+#banner-sect{
+    height: 70vh;
     width: 100%;
     background-image: linear-gradient(
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.6)
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
     ),
-    url("../imgs/Banner-1.jpg");
+    url("../images/Banner-home.jpg");
     background-repeat: no-repeat;
     background-size: 100% auto;
+    background-attachment: fixed;
 }
 
 .main-content{
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     h1{
