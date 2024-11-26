@@ -1,3 +1,14 @@
-img{
-    width: 40%;
+.box{
+    background-color: #fff;
+    padding: 2vh 4vh;
+    height: fit-content;
+    .course-image{
+        height: 20vh;
+        width: 100%;
+        background-color: #baf4f8;
+        background-size: 100%;
+        img{
+            height: 90%;
+        }
+    }
 }
